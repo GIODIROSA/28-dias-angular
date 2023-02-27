@@ -1,0 +1,22 @@
+<form action="">
+  <div class="row align-items-center">
+    <div class="col-auto">
+      <label class="col-form-label" for="newItem">New {{ label }}</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" id="newItem" class="form-control" #newItem />
+    </div>
+    <div class="col-auto">
+      <button
+        type="button"
+        class="btn"
+        (click)="onAddNewCity(newItem.value)"
+        [ngClass]="[className]"
+      >
+        Add {{ label }}
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- (click)="aaddNewCity(city)" -->

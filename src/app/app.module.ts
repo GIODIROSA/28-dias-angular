@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './share/button/button.component';
 import { NotImageDirective } from './not-image.directive';
+import { FromNewItemComponent } from './share/from-new-item/from-new-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
-    NotImageDirective
+    NotImageDirective,
+    FromNewItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,13 @@
-<h2 class="color--titulo">{{ titulo }}</h2>
+<!-- <h2 class="color--titulo">{{ titulo }}</h2>
 <p class="color--parrafo">{{ subtitulo }}</p>
 
-<p>introduce el nombre en el input para que salga en el parrafo</p>
+<p>introduce el nombre en el input para que salga en el parrafo</p> -->
 
 <!-- <p *ngIf="nombre">el nombre es: {{ nombre }}</p>
 <input type="text" [(ngModel)]="nombre" /> -->
 
-<!-- <ul *ngFor="let city of cities">
-  <li
+<!-- <ul >
+  <li *ngFor="let city of cities"
     [ngClass]="{
       selected: city === 'Barcelona',
       barra_color: city !== 'Barcelona'
@@ -17,22 +17,23 @@
   </li>
 </ul> -->
 
-<img appNotImage src="{{ urlImage }}" alt="{{ nombre }}" />
+<!-- <img appNotImage src="{{ urlImage }}" alt="{{ nombre }}" />
 
 <div [ngSwitch]="evaluacion">
   <p *ngSwitchCase="2">El valor es 2</p>
   <p *ngSwitchCase="6">El valor es 6</p>
   <p *ngSwitchDefault>No es ningun del valor</p>
-</div>
+</div> -->
 
 <!-- EVENT BINDING ANGULAR -->
 <!-- es un addEventListener -->
 
-<p *ngIf="nombre">el nombre es: {{ nombre }}</p>
-<input type="text" [(ngModel)]="nombre" />
+<!-- <p *ngIf="nombre">el nombre es: {{ nombre }}</p>
+<input type="text" [(ngModel)]="nombre" /> -->
 
-<ul *ngFor="let city of cities">
+<!-- <ul>
   <li
+    *ngFor="let city of cities"
     (click)="onCityCliked(city)"
     [ngClass]="{
       selected: city === selection
@@ -40,17 +41,53 @@
   >
     {{ city }}
   </li>
-</ul>
-
-<div *ngIf="selection">
+</ul> -->
+<!-- @input -->
+<!-- <div *ngIf="selection">
   <p>Your city is: {{ selection }}</p>
-  <!-- <button (click)="onClear()">Clear your selection</button> -->
   <app-button
     (click)="onClear()"
     [color]="'blue'"
     [label]="'Clear your selection'"
     [selection]="selection"
   ></app-button>
-</div>
+</div> -->
 
-<!-- @input -->
+<!-- ===================================================== -->
+<!-- @output -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 my-3">
+      <app-from-new-item
+        [className]="'btn-info'"
+        [label]="'City'"
+        (newItemEvent)="addNewCity($event)"
+      ></app-from-new-item>
+    </div>
+    <div class="col-md-8">
+      <ul>
+        <li
+          *ngFor="let city of cities"
+          (click)="onCityCliked(city)"
+          [ngClass]="{
+            'alert alert-info': city === selection
+          }"
+        >
+          {{ city }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <div *ngIf="selection">
+        <p>Your city is: {{ selection }}</p>
+        <app-button
+          (click)="onClear()"
+          [color]="'blue'"
+          [label]="'Clear your selection'"
+          [selection]="selection"
+        ></app-button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,10 @@ export class AppComponent {
   urlImage: string = 'https://baconmockup.com/640/360';
   evaluacion: number = 6;
 
+  addNewCity(city: string): void {
+    this.cities.push(city);
+  }
+
   onCityCliked(city: string): void {
     console.log('City ->', city);
     this.selection = city;
