@@ -1,0 +1,8 @@
+<li
+  (click)="onCityCliked(city)"
+  [ngClass]="{
+    'alert alert-info': city === selection
+  }"
+>
+  {{ city }}
+</li>

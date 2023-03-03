@@ -1,9 +1,16 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 @Component({
   selector: 'app-from-new-item',
   templateUrl: './from-new-item.component.html',
   styleUrls: ['./from-new-item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FromNewItemComponent {
   @Input() label!: string;

@@ -65,17 +65,15 @@
         (newItemEvent)="addNewCity($event)"
       ></app-from-new-item>
     </div>
+    <hr />
     <div class="col-md-8">
       <ul>
-        <li
+        <app-cities
           *ngFor="let city of cities"
-          (click)="onCityCliked(city)"
-          [ngClass]="{
-            'alert alert-info': city === selection
-          }"
-        >
-          {{ city }}
-        </li>
+          (cityClickedEvent)="onCityCliked($event)"
+          [city]="city"
+          [selection]="selection"
+        ></app-cities>
       </ul>
     </div>
     <div class="col-md-4">
@@ -91,3 +89,6 @@
     </div>
   </div>
 </div>
+
+<!-- CHANGE DETECTION -->
+<!-- ===================================================== -->

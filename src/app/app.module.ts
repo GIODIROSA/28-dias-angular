@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './share/button/button.component';
 import { NotImageDirective } from './not-image.directive';
 import { FromNewItemComponent } from './share/from-new-item/from-new-item.component';
+import { CitiesComponent } from './share/cities/cities.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
     NotImageDirective,
-    FromNewItemComponent
+    FromNewItemComponent,
+    CitiesComponent
   ],
   imports: [
     BrowserModule,
